@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Playfair:ital,wght@0,500;1,500&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue: #08b0d6;
+            --blue-dark: #073eb5;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: url('img/white-gf1262ab0a_1280.jpg');
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        header {
+            align-content: center;
+            text-align: center;
+            font-size: 20px;
+            display: flex;
+        }
+
+        h1 {
+            color: white;
+            margin: 0px 80px 15px 40px;
+            font-family: 'Pangolin', cursive;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        nav {
+            font-size: 15px;
+            display: flex;
+            color: white;
+        }
+
+        .homepage {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            margin-right: 150px;
+        }
+
+        .lspage {
+            list-style: none;
+            display: flex;
+            width: 57px;
+            color: white;
+            padding: 0px;
+        }
+
+            .lspage li {
+                margin: 0px 10px 0px 10px;
+                width: 30px;
+            }
+
+        li {
+            margin: 0px 30px 0 30px;
+            padding: 4px;
+        }
+
+            li:hover {
+                color: wheat;
+                padding: 4px;
+                cursor: pointer;
+            }
+
+        .khana {
+            text-decoration: none;
+            color: wheat;
+        }
+
+        a:hover {
+            color: wheat;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+        }
+
+
+        .btn {
+            font-family: inherit;
+            cursor: pointer;
+            outline: 0;
+            font-size: 1.05rem;
+        }
+
+        .text {
+            opacity: 0.8;
+        }
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .container {
+            min-height: 100vh;
+        }
+
+        .meal-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .meal-search {
+            margin: 2rem 0;
+        }
+
+
+
+        .meal-search-box {
+            margin: 1.2rem 0;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .search-control,
+        .search-btn {
+            width: 100%;
+        }
+
+        .search-control {
+            padding: 0 1rem;
+            font-size: 1.1rem;
+            font-family: inherit;
+            outline: 0;
+            border: 1px solid var(--blue);
+            color: var(--blue);
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+        }
+
+            .search-control::placeholder {
+                color: var(--blue);
+            }
+
+        .search-btn {
+            width: 55px;
+            height: 55px;
+            font-size: 1.8rem;
+            background: var(--blue);
+            color: white;
+            border: none;
+            border-top-right-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            /* transition: all 0.4s linear;*/
+        }
+
+            .search-btn:hover {
+                background: var(--blue-dark);
+            }
+
+        .meal-result {
+            margin-top: 4rem;
+        }
+
+        #meal {
+            margin: 2.4rem 0;
+        }
+
+        .meal-item {
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .meal-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .meal-name {
+            padding: 1.5rem 0.5rem;
+        }
+
+            .meal-name h3 {
+                font-size: 1.4rem;
+            }
+
+        .recipe-btn {
+            text-decoration: none;
+            color: white;
+            background: var(--blue);
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            display: block;
+            width: 175px;
+            margin: 1rem auto;
+            border-radius: 2rem;
+        }
+
+            .recipe-btn:hover {
+                background: var(--blue-dark);
+            }
+
+        .meal-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            color: white;
+            background: var(--blue);
+            border-radius: 1rem;
+            width: 90%;
+            height: 90%;
+            overflow-y: scroll;
+            display: none;
+            padding: 2rem 0;
+        }
+
+            .meal-details::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            .meal-details::-webkit-scrollbar-thumb {
+                background: #f0f0f0;
+                border-radius: 2rem;
+            }
+
+
+
+        .showRecipe {
+            display: block;
+        }
+
+        .meal-details-content {
+            margin: 2rem;
+        }
+
+            .meal-details-content p:not(.recipe-category) {
+                padding: 1rem 0;
+            }
+
+        .recipe-close-btn {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            font-size: 1.8rem;
+            background: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+        }
+
+        .recipe-title {
+            letter-spacing: 1px;
+            padding-bottom: 1rem;
+        }
+
+        .recipe-category {
+            background: white;
+            font-weight: 600;
+            color: var(--blue);
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.3rem;
+        }
+
+        .recipe-category {
+            background: white;
+            font-weight: 600;
+            color: var(--blue);
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.3rem;
+        }
+
+        .recipe-instruct {
+            padding: 1rem 0;
+        }
+
+        .recipe-meal-img img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .recipe-link {
+            margin: 1.4rem 0;
+        }
+
+            .recipe-link a {
+                color: white;
+                font-size: 1.2rem;
+                font-weight: 700;
+                transition: all 0.4s linear;
+            }
+
+                .recipe-link a:hover {
+                    opacity: 0.8;
+                }
+
+
+        .notFound {
+            grid-template-columns: 1fr !important;
+            color: var(--blue);
+            font-size: 1.8rem;
+            font-weight: 600;
+            width: 100%;
+        }
+
+
+
+
+
+
+
+        @media screen and (min-width: 600px) {
+            .meal-search-box {
+                width: 540px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            #meal {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .meal-item {
+                margin: 0;
+            }
+
+            .meal-details {
+                width: 700px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            #meal {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class=".cont">
+        <header>
+            <h1> Yummy</h1>
+
+            <nav>
+                <ul class="homepage">
+                    <li> <a class="ghar" href="Home.html"> <i class="material-symbols-outlined"> Home</i> Home</a> </li>
+                    <li> <a class="khana" href="recipe.html"> <i class="material-symbols-outlined"> Restaurant_menu</i> Recipes</a> </li>
+                    <li> <a class="info" href="aboutus.html"><i class="material-symbols-outlined"> description</i> About Us</a></li>
+                    <li><a class="phone" href="contantus.html"> <i class="material-symbols-outlined"> call</i> Contact Us</a></li>
+                </ul>
+                <ul class="lspage">
+                    <li> <button> <i class="material-symbols-outlined"> notifications</i> </button> </li>
+                    <li> <a class="lspage" href="login.html"> Login</a> </li>
+                    <li> <a class="lspage" href="signup.html"> Sign Up</a> </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="wel">
+            <img src="img/coffee-g9c8b6b1fa_1280.jpg" />
+            <div>
+                <h1>Welcome to the Recipes<br /> &nbsp &nbsp &nbsp &nbspFinder Website</h1>
+        </section>
+        <div class="meal-search-box">
+            <input type="search" id="search-input" class="search-control" placeholder="Search Recipes" />
+            <button type="submit" class="search-btn btn" id="search-btn"><i class="fas fa-search">Search</i></button>
+        </div>
+    </div>
+
+    <div class="meal-result">
+        <h2 class="title"> Munna Kuch Kha Lo:</h2>
+        <div id="meal">
+            <!-- <div class = "meal-item" >
+            <div class = "meal-img" >
+            <img src = "food.jpg" alt = "food" >
+            </div >
+            <div class = "meal-name" >
+            <h3 > Potato Chips</h3 >
+            <a href = "#" class = "recipe-btn" > Get Recipe</a >
+            </div >
+            </div > -->
+
+        </div>
+    </div>
+
+
+    <div class="meal-details">
+
+        <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+            <i class="fas fa-times"> </i>
+        </button>
+
+        <div class="meal-details-content">
+            <!-- <h2 class = "recipe-title" > Meals Name </h2 >
+            <p class = "recipe-category" > Category Name</p >
+            <div class = "recipe-instruct" >
+            <h3 > Instructions:</h3 >
+            <p > Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo blanditiis quis accusantium natus! Porro, reiciendis maiores molestiae distinctio veniam ratione ex provident ipsa, soluta suscipit quam eos velit autem iste!</p >
+            <p > Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam voluptatibus ad obcaecati magnam, esse numquam nisi ut adipisci in?</p >
+            </div >
+            <div class = "recipe-meal-img" >
+            <img src = "food.jpg" alt = "" >
+            </div >
+            <div class = "recipe-link" >
+            <a href = "#" target = "_blank" > Watch Video</a >
+            </div > -->
+        </div>
+    </div>
+    
+  
+
+
+
+    <script>
+        const searchBtn = document.getElementById('search-btn');
+        const mealList = document.getElementById('meal');
+        const mealDetailsContent = document.querySelector('.meal-details-content');
+        const recipeCloseBtn = document.getElementById('recipe-close-btn');
+
+
+        searchBtn.addEventListener('click', getMealList);
+        mealList.addEventListener('click', getMealRecipe);
+        recipeCloseBtn.addEventListener('click', () => {
+            mealDetailsContent.parentElement.classList.remove('showRecipe');
+        });
+
+
+        function getMealList() {
+            let searchInputTxt = document.getElementById('search-input').value.trim();
+            fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`).then(response => response.json()).then(data => {
+                let html = "";
+                if (data.meals) {
+                    data.meals.forEach(meal => {
+                        html += `
+                                        <div class = "meal-item" data-id = "${meal.idMeal}">
+                                            <div class = "meal-img">
+                                                <img src = "${meal.strMealThumb}" alt = "food">
+                                            </div>
+                                            <div class = "meal-name">
+                                                <h3>${meal.strMeal}</h3>
+                                                <a href = "#" class = "recipe-btn">Get Recipe</a>
+                                            </div>
+                                        </div>
+                                    `;
+                    });
+                    mealList.classList.remove('notFound');
+                } else {
+                    html = "Sorry, we didn't find any meal!";
+                    mealList.classList.add('notFound');
+                }
+
+                mealList.innerHTML = html;
+            });
+        }
+
+
+
+        function getMealRecipe(e) {
+            e.preventDefault();
+            if (e.target.classList.contains('recipe-btn')) {
+                let mealItem = e.target.parentElement.parentElement;
+                fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`).then(response => response.json()).then(data => mealRecipeModal(data.meals));
+            }
+
+        }
+
+
+        function mealRecipeModal(meal) {
+            console.log(meal);
+            meal = meal[0];
+            let html = ` <h2 class = "recipe-title">${meal.strMeal}  </h2 >
+
+                            <p class = "recipe-category" > ${meal.strCategory} </p >
+
+                            <div class = "recipe-instruct" >
+                            <h3 > Instructions:</h3 >
+                            <p > ${meal.strInstructions} </p >
+                            </div >
+
+                            <div class = "recipe-meal-img" >
+                            <img src = "${meal.strMealThumb}" alt = "" >
+                            </div >
+                            <div class = "recipe-link" >
+                            <a href = "${meal.strYoutube}" target = "_blank" > Watch Video</a >
+                            </div >
+                            `;
+            mealDetailsContent.innerHTML = html;
+            mealDetailsContent.parentElement.classList.add('showRecipe');
+        }
+    </script>
+</body>
+        </html >
